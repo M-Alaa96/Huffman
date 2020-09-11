@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package huffman;
 
 import java.io.BufferedReader;
@@ -32,11 +28,6 @@ import java.util.logging.Logger;
  */
 public class Huffman {
 
-    /**
-     * @param args the command line arguments
-     */
-    /*final static Comparator<Node> comparator = new Node();
-    static PriorityQueue<Node> nodes = new PriorityQueue<>(comparator);*/
     static PriorityQueue<Node> nodes = new PriorityQueue<>((o1, o2) -> (o1.value < o2.value) ? -1 : 1);
     static TreeMap<Character, String> codes = new TreeMap<>();
     static HashMap<Character, String> lookUpFile = new HashMap<>();
@@ -86,12 +77,10 @@ public class Huffman {
                 if (decision == 1) {
                     System.out.println("enter file path \n");
                     String filePath = console.nextLine();
-                    //  String filePath = "C:\\Users\\RS\\Desktop\\Huffman\\input.txt";
                     Scanner scanner = new Scanner(new File(filePath));
                     System.out.println("enter output file path \n");
                     String outputFile = console.nextLine();
-                    // outputFile = outputFile.concat(".txt");                
-                    //  String outputFile = "C:\\Users\\RS\\Desktop\\Huffman\\q.txt";             
+                              
                     compressOutput = new BufferedWriter(new FileWriter(new File(outputFile), false));
                     text = new String(Files.readAllBytes(Paths.get(filePath)));
                     handleEncodingNewText(scanner, decision);
@@ -102,7 +91,6 @@ public class Huffman {
                 } else if (decision == 2) {
                     System.out.println("enter file path \n");
                     String filePath = console.nextLine();
-                    //   String filePath="C:\\Users\\RS\\Desktop\\Huffman\\q.txt";
                     Scanner scanner = new Scanner(new File(filePath));
                     handleDecodingNewText(scanner);
                     endTime = System.currentTimeMillis();
@@ -127,7 +115,6 @@ public class Huffman {
                 text += "\n";
             }
         }
-        //System.out.println("Text to Encode: " + text);
         frequency.clear();
         nodes.clear();
         codes.clear();
@@ -200,10 +187,8 @@ public class Huffman {
         Scanner console = new Scanner(System.in);
         do {
             System.out.println("enter output file path \n");
-            //String outputFile="C:\\Users\\RS\\Desktop\\Huffman\\z.txt";
 
             String outputFile = console.nextLine();
-            //     outputFile = outputFile.concat(".txt");
             decompressOutput = new BufferedWriter(new FileWriter(new File(outputFile), false));
             frequency.clear();
             nodes.clear();
