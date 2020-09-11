@@ -1,5 +1,5 @@
 # Huffman Compression & Decompression
-program that can compress and decompress a file using Huffman encoding.
+Java program that can compress and decompress a file using Huffman encoding.
 # Input to this program is:
 1. A file name.
 2. Whether to compress or decompress the file.
